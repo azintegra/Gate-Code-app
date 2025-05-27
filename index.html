@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#121212">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+
+    <meta charset="UTF-8">
+    <title>Highlighted Address & Gate Codes</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .info {
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        #searchBox {
+            display: block;
+            margin: 0 auto 20px auto;
+            padding: 10px;
+            width: 80%;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            background-color: #1f1f1f;
+            color: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: auto;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #444;
+        }
+        th {
+            background-color: #1f1f1f;
+        }
+        .address {
+            font-weight: bold;
+            color: white;
+        }
+        .gate-code {
+            font-weight: bold;
+            color: white;
+        }
+        .highlight {
+            background-color: #333366 !important;
+        }
+    </style>
+    <script>
+        function searchTable() {
+            let input = document.getElementById("searchBox").value.toLowerCase();
+            let rows = document.querySelectorAll("tbody tr");
+
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    row.style.display = "";
+                    row.classList.add("highlight");
+                } else {
+                    row.style.display = "none";
+                    row.classList.remove("highlight");
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Address Gate Code(s)</h1>
+    <div class="info">
+        COURIER CODE: 961723 - FOR NON-AMAZON LOCKERS<br>
+        LOCKER SUPPORT PHONE NUMBER: (888) 283-0577<br>
+        DRIVER SUPPORT PHONE NUMBER: (888) 281-6906
+    </div>
+    <input type="text" id="searchBox" onkeyup="searchTable()" placeholder="Search for address or gate code...">
+    <table>
+        <thead>
+            <tr><th>Address</th><th>Gate Code(s)</th></tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td class="address">111 S Church Ave Unit 613</td>
+            <td class="gate-code">#7895</td>
+        </tr>
+    
+        <tr>
+            <td class="address">14162 E Huppenthal Blvd</td>
+            <td class="gate-code">#1730</td>
+        </tr>
+    
+        <tr>
+            <td class="address">201 S Stone Ave #502</td>
+            <td class="gate-code">#3171</td>
+        </tr>
+    
+        <tr>
+            <td class="address">902 S 6th Ave Unit 207</td>
+            <td class="gate-code">#5563#</td>
+        </tr>
+    
+        <tr>
+            <td class="address">905 W Calle Carasol</td>
+            <td class="gate-code">#0023</td>
+        </tr>
+    
+        <tr>
+            <td class="address">1248 S Via Estrella Roja</td>
+            <td class="gate-code">#1043</td>
+        </tr>
+    
+        <tr>
+            <td class="address">2860 S Greenside Pl (The Links in Green Valley)</td>
+            <td class="gate-code">#1234</td>
+        </tr>
+    
+        <tr>
+            <td class="address">601 W Links Ln</td>
+            <td class="gate-code">#1234</td>
+        </tr>
+    
+        <tr>
+            <td class="address">597 W Wataview Dr</td>
+            <td class="gate-code">#4182</td>
+        </tr>
+    
+        <tr>
+            <td class="address">1195 W Placita Quieta</td>
+            <td class="gate-code">#5602</td>
+        </tr>
+    
+        <tr>
+            <td class="address">4200 E Benson Hwy F8</td>
+            <td class="gate-code">#7777</td>
+        </tr>
+    
+        <tr>
+            <td class="address">238 E Allthorn Pl</td>
+            <td class="gate-code">#1145, #1020</td>
+        </tr>
+    
+        <tr>
+            <td class="address">401 N Maguire Ave Apt 149</td>
+            <td class="gate-code">#1490</td>
+        </tr>
+    
+        <tr>
+            <td class="address">401 N Maguire Ave Apt 159</td>
+            <td class="gate-code">#1590</td>
+        </tr>
+    
+        <tr>
+            <td class="address">3052 N Alvernon Way Apt 207</td>
+            <td class="gate-code">#C465, #707</td>
+        </tr>
+    
+        <tr>
+            <td class="address">970 E Golf Links Rd</td>
+            <td class="gate-code">#3071</td>
+        </tr>
+    
+        <tr>
+            <td class="address">1976 S Caminito Lindo</td>
+            <td class="gate-code">#5602</td>
+        </tr>
+    
+        <tr>
+            <td class="address">3331 E Kleindale Rd</td>
+            <td class="gate-code">#0715</td>
+        </tr>
+    
+        <tr>
+            <td class="address">1050 E River Rd</td>
+            <td class="gate-code">#1111</td>
+        </tr>
+    
+        <tr>
+            <td class="address">1040 E River Rd</td>
+            <td class="gate-code">#1111</td>
+        </tr>
+    
+        <tr>
+            <td class="address">2389 E Autumn Flower Dr</td>
+            <td class="gate-code">#1911, #4520</td>
+        </tr>
+    
+        <tr>
+            <td class="address">4500 E Sunrise Dr Apt D6</td>
+            <td class="gate-code">#5602, #0109</td>
+        </tr>
+    
+        <tr>
+            <td class="address">2238 N Catalina Vista Loop</td>
+            <td class="gate-code">#8618 (Cannot access until 6 AM)</td>
+        </tr>
+    
+        <tr>
+            <td class="address">515 N Tyndall Ave E405</td>
+            <td class="gate-code">#8318, #2200, #3959, #8807</td>
+        </tr>
+    
+        <tr>
+            <td class="address">1201 E Placita De Chonina</td>
+            <td class="gate-code">#5208</td>
+        </tr>
+    
+        <tr>
+            <td class="address">13710 N Carlynn Cliff Dr</td>
+            <td class="gate-code">#1269</td>
+        </tr>
+    
+        <tr>
+            <td class="address">4050 W Aerie Dr Unit 161</td>
+            <td class="gate-code">#9855, #2882</td>
+        </tr>
+    
+        <tr>
+            <td class="address">4050 W Aerie Dr Unit 142</td>
+            <td class="gate-code">#2882, #9855, #7335</td>
+        </tr>
+    
+        <tr>
+            <td class="address">4050 W Aerie Dr Unit 132</td>
+            <td class="gate-code">#2882, #9855</td>
+        </tr>
+    
+        <tr>
+            <td class="address">4115 W Aerie Dr Apt 114</td>
+            <td class="gate-code">#2146, #2882</td>
+        </tr>
+    
+        <tr>
+            <td class="address">10644 N Cactus Point Dr</td>
+            <td class="gate-code">#5225</td>
+        </tr>
+    
+        <tr>
+            <td class="address">10965 N Cormac Avenue</td>
+            <td class="gate-code">#1414</td>
+        </tr>
+    
+        <tr>
+            <td class="address">8625 N Continental Links Dr</td>
+            <td class="gate-code">#3580, #8625</td>
+        </tr>
+    
+        <tr>
+            <td class="address">1001 W Saint Marys Rd Apt 412</td>
+            <td class="gate-code">#0715, #3969, #1001, #1234, #6500</td>
+        </tr>
+    
+        <tr>
+            <td class="address">3549 N Tin Star Pl</td>
+            <td class="gate-code">#6901</td>
+        </tr>
+    
+        <tr>
+            <td class="address">7115 W El Camino Del Cerro</td>
+            <td class="gate-code">#6722</td>
+        </tr>
+    
+        <tr>
+            <td class="address">2525 W Anklam Rd (Campus Crossing)</td>
+            <td class="gate-code">#2625</td>
+        </tr>
+    
+        <tr>
+            <td class="address">10582 E Oakbrook St</td>
+            <td class="gate-code">#8028</td>
+        </tr>
+    
+        <tr>
+            <td class="address">10584 E Oakbrook St</td>
+            <td class="gate-code">#8028</td>
+        </tr>
+    
+        <tr>
+            <td class="address">10420 E Rita Ranch Crossing Cir</td>
+            <td class="gate-code">#8028</td>
+        </tr>
+    
+        <tr>
+            <td class="address">10422 E Rita Ranch Crossing Cir</td>
+            <td class="gate-code">#8028</td>
+        </tr>
+    
+        <tr>
+            <td class="address">10740 S Miralago Dr</td>
+            <td class="gate-code">#4588</td>
+        </tr>
+    
+        <tr>
+            <td class="address">10834 E Placita Guajira</td>
+            <td class="gate-code">#9020</td>
+        </tr>
+    
+        <tr>
+            <td class="address">9566 E Creek Vista Pl</td>
+            <td class="gate-code">#1957</td>
+        </tr>
+    
+        <tr>
+            <td class="address">9055 E Catalina Hwy</td>
+            <td class="gate-code">#4621</td>
+        </tr>
+    
+        <tr>
+            <td class="address">2468 N Wychwood Ct</td>
+            <td class="gate-code">#2580 (Cannot access until 6 AM)</td>
+        </tr>
+    
+        <tr>
+            <td class="address">2444 N Lightning A Dr</td>
+            <td class="gate-code">#5219 (Cannot access until 6 AM)</td>
+        </tr>
+    
+        <tr>
+            <td class="address">9433 E Star Water Dr</td>
+            <td class="gate-code">#0553 (Cannot access until 6 AM)</td>
+        </tr>
+    
+        <tr>
+            <td class="address">4330 N Camino De Carrillo</td>
+            <td class="gate-code">#1469</td>
+        </tr>
+    
+        <tr>
+            <td class="address">3333 N Placita De Coronado</td>
+            <td class="gate-code">#9020</td>
+        </tr>
+    
+        <tr>
+            <td class="address">5755 E River Rd Apt 4012</td>
+            <td class="gate-code">#3578</td>
+        </tr>
+    
+        <tr>
+            <td class="address">5101 N Glencoe Rd</td>
+            <td class="gate-code">#2942, #4230</td>
+        </tr>
+    
+        </tbody>
+    </table>
+</body>
+</html>
